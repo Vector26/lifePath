@@ -3,9 +3,10 @@ package com.lifepath.lifepath;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"com.lifepath.lifepath.models"})
+@ComponentScan(basePackages = "com.lifepath")
 public class LifepathApplication {
 
 	public static void main(String[] args) {

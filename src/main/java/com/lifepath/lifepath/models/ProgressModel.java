@@ -2,9 +2,8 @@ package com.lifepath.lifepath.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Document
@@ -13,6 +12,7 @@ import java.util.Date;
 public class ProgressModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String userId;
