@@ -1,4 +1,4 @@
-package com.lifepath.lifepath;
+package com.lifepath;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

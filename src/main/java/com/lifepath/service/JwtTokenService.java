@@ -1,4 +1,4 @@
-package com.lifepath.lifepath.service;
+package com.lifepath.service;
 
 
 import io.jsonwebtoken.*;

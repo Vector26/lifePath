@@ -1,8 +1,8 @@
-package com.lifepath.lifepath.service;
+package com.lifepath.service;
 
 
-import com.lifepath.lifepath.models.UserModel;
-import com.lifepath.lifepath.repository.UserRepository;
+import com.lifepath.models.UserModel;
+import com.lifepath.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.lifepath.lifepath.repository;
+package com.lifepath.repository;
 
-import com.lifepath.lifepath.models.ProgressModel;
+import com.lifepath.models.ProgressModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Date;

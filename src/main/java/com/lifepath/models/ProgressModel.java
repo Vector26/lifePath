@@ -1,9 +1,9 @@
-package com.lifepath.lifepath.models;
+package com.lifepath.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.util.Date;
 
 @Document

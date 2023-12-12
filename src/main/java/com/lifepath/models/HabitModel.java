@@ -1,15 +1,15 @@
-package com.lifepath.lifepath.models;
+package com.lifepath.models;
+
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
-import java.util.Date;
-
+@Entity
+@Table(name = "habits")
 @Data
 @NoArgsConstructor
-@Entity
-@Table(name = "events")
-public class EventModel {
+public class HabitModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,10 +18,8 @@ public class EventModel {
     @JoinColumn(name = "user_id", nullable = false)
     private UserModel userModel;
 
-    private String title;
-    private String description;
-    private Date eventDate;
-    private String emotion; // e.g., Good, Bad, Boring
+    private String name;
+    private String frequency; // e.g., Daily, Weekly
 
     // Getters and setters
 }

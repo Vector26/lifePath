@@ -1,6 +1,6 @@
-package com.lifepath.lifepath.models;
+package com.lifepath.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -1,7 +1,7 @@
-package com.lifepath.lifepath.repository;
+package com.lifepath.repository;
 
 
-import com.lifepath.lifepath.models.ReflectionModel;
+import com.lifepath.models.ReflectionModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

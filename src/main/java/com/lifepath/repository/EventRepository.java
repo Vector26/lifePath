@@ -1,5 +1,5 @@
-package com.lifepath.lifepath.repository;
-import com.lifepath.lifepath.models.EventModel;
+package com.lifepath.repository;
+import com.lifepath.models.EventModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

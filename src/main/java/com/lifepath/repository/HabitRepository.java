@@ -1,7 +1,7 @@
-package com.lifepath.lifepath.repository;
+package com.lifepath.repository;
 
 
-import com.lifepath.lifepath.models.HabitModel;
+import com.lifepath.models.HabitModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
