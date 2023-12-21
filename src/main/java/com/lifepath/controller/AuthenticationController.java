@@ -1,4 +1,5 @@
 package com.lifepath.controller;
+import com.lifepath.dto.UserResponseDTO;
 import com.lifepath.models.UserModel;
 import com.lifepath.service.JwtTokenService;
 import com.lifepath.service.UserService;
@@ -20,7 +21,7 @@ public class AuthenticationController {
     private JwtTokenService jwtTokenService;
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> registerUser(@RequestBody UserModel user) {
-        UserModel newUser = userService.registerUser(user);
+        UserResponseDTO newUser = userService.registerUser(user);
         return ResponseEntity.ok(newUser);
     }
 

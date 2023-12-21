@@ -1,6 +1,8 @@
 package com.lifepath.models;
 
 import javax.persistence.*;
+
+import com.lifepath.constants.HabitFrequency;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,7 +21,7 @@ public class HabitModel {
     private UserModel userModel;
 
     private String name;
-    private String frequency; // e.g., Daily, Weekly
-
+    private HabitFrequency frequency;
+    private long totalTimesDone;
     // Getters and setters
 }

@@ -1,6 +1,7 @@
 package com.lifepath.service;
 
 import com.lifepath.models.EventModel;
+import com.lifepath.models.UserModel;
 import com.lifepath.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,8 @@ public class EventService {
         return eventRepository.findById(id).orElse(null);
     }
 
-    public List<EventModel> getAllEvents() {
-        return eventRepository.findAll();
+    public List<EventModel> getAllEventsByUser(UserModel userModel) {
+        return eventRepository.findByUserModelId(userModel.getId());
     }
 
     public EventModel updateEvent(Long id, EventModel updatedEvent) {

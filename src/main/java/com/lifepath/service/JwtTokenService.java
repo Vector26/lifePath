@@ -2,13 +2,15 @@ package com.lifepath.service;
 
 
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
 public class JwtTokenService {
 
-    private final String secretKey = "YourSecretKey";
+    @Value("${jwt.secret}")
+    private String secret;
 
     public String generateToken(String username) {
         long now = System.currentTimeMillis();
@@ -16,13 +18,13 @@ public class JwtTokenService {
                 .setSubject(username)
                 .setIssuedAt(new Date(now))
                 .setExpiration(new Date(now + 900000)) // Token validity
-                .signWith(SignatureAlgorithm.HS512, secretKey)
+                .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
         } catch (JwtException e) {
             // Log and handle invalid token
@@ -32,7 +34,7 @@ public class JwtTokenService {
 
     public String getUsernameFromToken(String token) {
         return Jwts.parser()
-                .setSigningKey(secretKey)
+                .setSigningKey(secret)
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();

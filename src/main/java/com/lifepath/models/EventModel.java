@@ -9,7 +9,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "events")
-public class EventModel {
+public class  EventModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

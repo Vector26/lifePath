@@ -1,31 +1,29 @@
-package com.lifepath.models;
+package com.lifepath.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.lifepath.models.ProgressModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
-@Document(collection = "progresses")
-@Data
-@NoArgsConstructor
-public class ProgressModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private Long userId;
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ProgressRequestDTO {
+    @JsonProperty("date")
     private Date date;
-
-    // Existing relationships
+    @JsonProperty("habits")
     private List<Long> habitIds;
+    @JsonProperty("reflections")
     private List<String> reflectionIds;
+    @JsonProperty("events")
     private List<Long> eventIds; //Need to reunderstand the use of this has-a relationship
 
-    // New field for skill progress
-    private List<SkillProgress> skillProgresses;
+    @JsonProperty("skillsProgress")
+    private List<ProgressModel.SkillProgress> skillProgresses;
     @Data
     @NoArgsConstructor
     public class SkillProgress {
@@ -42,6 +40,4 @@ public class ProgressModel {
         private float habitStat; // Amount of habit completed
         // Getters and setters
     }
-    // Getters and setters
 }
-

@@ -15,7 +15,7 @@ public class UserModel {
 
     private String username;
     private String email;
-    private String password; // Store hashed passwords only
-
-    // Getters and setters
+    private String password;
+    @Column(name = "profile_id", nullable = true)
+    private String profileId;
 }
